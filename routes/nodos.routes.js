@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const {routePOST} = require('../controllers/nodos.controllers');
+const {routeGo} = require('../controllers/nodos.controllers');
 
-router.post('/', routePOST);
+router.post('/', routeGo);
 
 module.exports = router;
 
