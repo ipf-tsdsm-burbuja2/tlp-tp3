@@ -7,7 +7,7 @@ ctrlNodos.routePOST = async (req, res)=>{
     const {nodos} = req.body;
     res.json({msg: 'recibido!'});
     let arrayNodos = addArray(nodos, ipSend, myIp);
-    // console.log(arrayNodos)
+    // console.log(arrayNodos);
     sendArray(arrayNodos);
 }
 
@@ -22,8 +22,6 @@ const addArray = (nodos, ipSend, myIp) =>{
 }
 
 const sendArray = async (arrayNodos) =>{
-    console.log(arrayNodos)
-   
     const response = await fetch(`${ipSend}:4000`, {
         method: 'post',
         body: JSON.stringify({nodos: arrayNodos}),
